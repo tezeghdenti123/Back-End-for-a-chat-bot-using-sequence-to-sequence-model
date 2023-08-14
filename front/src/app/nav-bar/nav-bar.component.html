@@ -1,0 +1,151 @@
+<!--Main Navigation-->
+<header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <!-- Collapse 1 -->
+          <li class="list-group-item py-1">
+            <button class="btn" (click)="new()"> New Chat</button>
+          </li>
+            <div class="Previous">
+              <i class="fas fa-tachometer-alt fa-fw me-3" >Previous Chats</i>
+            </div>
+          
+            
+          
+          <!-- Collapsed content -->
+         
+          <table>
+            <tr *ngFor="let item of dataArray.listChat">
+              <li class="list-group-item py-1">
+                <button class="btn" (click)="getChat(item)"> {{item.tag}}</button>
+              </li>
+            </tr>
+            
+        </table>
+        <br>
+        <li class="list-group-item py-1">
+          <button (click)="logout()" class="btn">Log Out</button>
+        </li>
+          <!-- Collapse 1 -->
+  
+          <!-- Collapse 2 -->
+         
+          <!-- Collapsed content -->
+          
+          <!-- Collapse 2 -->
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+  
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+  
+        <!-- Brand -->
+        <a class="navbar-brand">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+            height="25"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+        </a>
+        <!-- Search form -->
+        
+        <form #user="ngForm" (ngSubmit)="send(user.value)" class="d-none d-md-flex input-group w-auto my-auto">
+          
+        
+        </form>
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <!-- Notification dropdown -->
+          <li class="nav-item dropdown">
+            
+          <!-- Avatar -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+            
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                class="rounded-circle"
+                height="22"
+                alt="Avatar"
+                loading="lazy"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li><a class="dropdown-item">My profile</a></li>
+              <li><a class="dropdown-item">Settings</a></li>
+              <li><a class="dropdown-item" >Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+  
+  <!--Main layout-->
+  <main style="margin-top: 58px;">
+    <table class="table table-striped table-dark">
+      <thead>
+        
+      </thead>
+      <tbody>
+        
+        <tr *ngFor="let it of chat.listMessage">
+          <th scope="row" class="titre" *ngIf="it.sender else Boot">User</th>
+          <ng-template #Boot>
+            <th scope="row" class="boot" >Boot</th>
+          </ng-template>
+          <td ><h2 > {{it.message}}</h2></td>
+          
+        </tr>
+        
+        
+      </tbody>
+    </table>
+    <div class="container pt-4">
+      <div class="container">
+        <form #user1="ngForm" (ngSubmit)="send(user1.value)" >
+          <div class="input-group">
+            <input type="search" class="form-control" ngModel name="input" placeholder="Ask question">
+            <span class="input-group-btn">
+            <button class="btn btn-primary"  ><span class="glyphicon glyphicon-search" aria-hidden="true">
+            </span> Send</button>
+            </span>
+            </div>
+      </form>
+      </div>
+    </div>
+  </main>
+  
+  <!--Main layout-->

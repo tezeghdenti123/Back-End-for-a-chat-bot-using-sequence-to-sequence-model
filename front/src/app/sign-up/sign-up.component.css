@@ -1,0 +1,55 @@
+.box{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    margin-top: -50px;
+    margin-left: -50px;
+    border-radius: 10px;
+    background-color: #354152;
+    box-shadow: 20px 0 20px -4px #262d36, -12px 0 20px -4px #262d36,0px 10px 20px 4px #262d36,0px -10px 8px 4px #262d36;
+}
+.input{
+    padding: 10px;
+    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+    width: 300px;
+    border: solid;
+    border-color: #354152;
+}
+.button{
+    position: relative;
+    left: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 10px;
+    border: solid;
+    border-color: #354152;
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+    color: #ffffff;
+    font-size: 20px;
+}
+.title{
+    font-size: 50px;
+    font-weight: 100;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: #fffefe;
+    position: relative;
+    left: 20%;
+    margin: 10px;
+}
+.sign{
+    font-size: 20px;
+    font-weight: 100;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: #fbfafa;
+    position: relative;
+    left: 40%;
+}
+.sign:hover {
+    color: #84fab0;
+  }
